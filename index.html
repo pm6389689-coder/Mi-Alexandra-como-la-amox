@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Con cariño para ti</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f7ebe1;
+    }
+    .card-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+    }
+    .card-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* Zona invisible sobre el botón de la imagen */
+    .btn-cancion {
+      position: absolute;
+      bottom: 2.2%;
+      right: 22.5%;
+      width: 23.5%;
+      height: 6.5%;
+      background: transparent;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-container">
+    <img src="carta.png" alt="Carta con imagen">
+    <button class="btn-cancion" onclick="togglePlay()"></button>
+  </div>
+
+  <audio id="audioTrack" src="cancion.mp3"></audio>
+
+  <script>
+    const audio = document.getElementById('audioTrack');
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+  </script>
+
+</body>
+</html>
